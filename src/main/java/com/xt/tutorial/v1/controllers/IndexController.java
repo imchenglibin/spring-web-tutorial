@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xt.tutorial.utils.ResponseData;
+
 @Controller
 @RequestMapping("/index")
 public class IndexController {
@@ -23,4 +25,12 @@ public class IndexController {
 		
 		return response;
 	}
+	
+	@GetMapping("/test_response_data")
+	@ResponseBody
+	public ResponseData testResponseData() {
+		return ResponseData.ok().putDataValue("token", "XXXXXXXXXXXXXXXXXXXXXXX");
+	}
+	
+	
 }
